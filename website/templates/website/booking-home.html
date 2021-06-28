@@ -1,0 +1,23 @@
+{% extends 'website/basic.html' %}
+
+{% load static %}
+
+
+{% block style %}
+<link rel="stylesheet" href="{%static 'css/allbookings.css' %}" />
+
+{% endblock style %}
+
+{% block center-content %}
+<div class="container">
+    <h1>Check Your Booking Status</h1>
+<div class="links">
+    <a href="{%url 'booked' %}">Rail Booking</a>
+    <a href="{%url 'busbookedticket' %}">Bus Booking</a>
+    <a href="{%url 'allflightbooked' %}">Flight Booking</a>
+</div>
+</div>
+{% endblock center-content %}
+
+{% block footer %}
+{% endblock footer %}

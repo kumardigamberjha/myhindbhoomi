@@ -1,0 +1,45 @@
+.header{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(4, 4, 4, 0.5)), url("../img/bird\ in\ kila.jpg");
+    background-size: 100%;
+}
+form{
+    left: 30%;
+    width: 30%;
+    position: relative;
+    /* margin: 110px 0; */
+
+}
+form .h1{
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2.5rem;
+    font-weight: 500;
+    text-align: center;
+}
+form .form-floating{
+    margin: 10px 0;
+}
+form .form-floating input{
+    width: 100%;
+}
+
+.in-one-line{
+    display: flex;
+    justify-content: space-between;
+}
+
+.error{
+    color: white;
+    margin-top: 250px;
+    margin-left: 300px;
+    background-color: rgba(21, 37, 51, 0.713);
+}
+form .errors{
+    color: white;
+    margin-top: 30px;
+}
+
+.one-page{
+    display: flex;
+    justify-content: space-between;
+}

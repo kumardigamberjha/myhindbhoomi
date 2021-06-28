@@ -1,0 +1,52 @@
+{% extends 'website/index.html' %}
+
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{%static 'css/signup.css' %}" />
+
+
+{% endblock style %}
+
+
+{% block center-content %}
+
+    <form action="" method="POST">
+    <h1 class="h1">Please sign in</h1>
+
+      {% csrf_token %}
+  
+      <div class="form-floating">
+        <input type="text" class="form-control" id="floatingInput" name="username" placeholder="name@example.com">
+        <label for="floatingInput">Username</label>
+      </div>
+      <div class="form-floating">
+        <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
+        <label for="floatingPassword">Password</label>
+      </div>
+  
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+      
+      <div class="errors text-danger"><p>{{form.errors}}</p></div>
+
+
+      {% for message in messages %}
+      <p>{{message}}</p>
+      {%endfor %}
+
+    </form>
+
+    {% endblock center-content %}
+
+{% block extra %}
+{% endblock extra %}
+
+{% block footer %}
+{% endblock footer %}
+
+  </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+</html>

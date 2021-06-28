@@ -1,0 +1,71 @@
+.header{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(4, 4, 4, 0.5)), url("../img/bus\ green.jpg");
+}
+.container{
+    position: relative;
+    top: 10%;
+}
+h1{
+    color: gold;
+    text-align: center;
+}
+.box{
+    width: 60%;
+    /* background-color: white; */
+}
+.box .from{
+    display: inline;
+    margin: 15px;
+}
+.box .from input{
+    padding: 10px;
+    width: 45%;
+    border-radius: 55px;
+}
+.box .to{
+    /* float: right; */
+    display: inline;
+    margin-left: 15px;
+}
+.box .to input{
+    padding: 10px;
+    width: 45%;
+    border-radius: 55px;
+
+}
+[type="date"]{
+    margin-top: 35px;
+    padding: 15px;
+    border-radius: 55px;
+    margin: 45px 33%;
+}
+[type="submit"]{
+    /* margin-top: 15px; */
+    width: 98%;
+    padding: 15px;
+    border-radius: 55px;
+    background-color: rgba(255, 166, 0, 0.707);
+}
+#ui-id-1 li{
+    color: black;
+    background-color: white;
+    width: 20%;
+    padding: 10px;
+    border-radius: 33px;
+}
+.ui-helper-hidden-accessible{
+    display: none;
+    overflow: hidden;
+}
+#ui-id-2 li{
+    color: black;
+    background-color: white;
+    width: 20%;
+    padding: 10px;
+    border-radius: 33px;
+}
+.result{
+    position: relative;
+    top: 50%;
+    text-align: center;
+}

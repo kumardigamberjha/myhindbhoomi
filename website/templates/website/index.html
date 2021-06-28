@@ -1,0 +1,100 @@
+{% extends 'website/basic.html' %}
+
+{% load static %}
+
+
+{% block style %}
+<link rel="stylesheet" href="{%static 'css/index.css' %}" />
+
+{% endblock style %}
+
+    {% block center-content %}
+    <div class="homepage">
+      <div class="content">
+        <h1 id="homepage_h1">Welcome to HindBhoomi Travels</h1>
+        <p id="homepage_p">Your touring guide across India</p>
+      </div>
+      <div class="button">
+        <div class="book">
+          <a href="{%url 'yourbookings' %}">Booking</a>
+        </div>
+        <div class="tour">
+          <a href="{% url 'tour-guide' %}">Tour Guide</a>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+  {% endblock center-content %}
+
+ 
+{% block extra %}
+  <div class="container">
+    <hr>
+    <h1 class="myheadings">Our Services</h1>
+    <hr>
+    <div class="extra-div">
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="img">
+            <a href="{% url 'rail' %}"><img src="{% static 'img/train.jpg' %}" alt="" /></a>
+          </div>
+          <div class="content">
+            <h3>Train</h3>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="img">
+            <a href="{% url 'bus' %}"><img src="{% static 'img/bus.jpeg' %}" alt="" /></a>
+          </div>
+          <div class="content">
+            <h3>Bus</h3>
+          </div>
+
+        </div>
+
+        <div class="col-md-4">
+          <div class="img">
+            <a href="{% url 'flight' %}"><img src="{% static 'img/flight.jpg' %}" alt="" /></a>
+          </div>
+          <div class="content">
+            <h3>Flight</h3>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="img">
+            <a href="{% url 'rail' %}"><img src="{% static 'img/chakra.jpeg' %}" alt="" /></a>
+          </div>
+          <div class="content">
+            <h3>4 Dham</h3>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="img">
+            <a href="{% url 'tour-guide' %}"><img src="{% static 'img/hotel.jpg' %}" alt="" /></a>
+          </div>
+          <div class="content">
+            <h3>State Wise Tour</h3>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="img">
+            <a href="{% url 'tour-guide' %}"><img src="{% static 'img/guide.jpg' %}" alt="" /></a>
+          </div>
+          <div class="content">
+            <h3>Guide</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock extra %}
+
+

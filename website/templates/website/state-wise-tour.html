@@ -1,0 +1,77 @@
+{% extends 'website/basic.html' %}
+
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{%static 'css/state-wise-guide.css' %}" />
+
+{% endblock style %}
+
+{% block center-content %}
+<div class="img">
+    <img src="/media/{{states.img1}}" alt="">
+</div>
+<div class="text">
+    <h1 class="myheadings">Welcome to {{states.name}}</h1>
+    <hr>
+    <p>Swipe down to see culture</p>
+    <i class="fa fa-hand-o-down"></i>
+</div>
+</div>
+
+<div class="container">
+    <h1 class="my-headings">{{states.name}} Culture</h1>
+    <div class="row">
+        <div class="col-md-6 right">
+            <h1>Folk Dance</h1>
+            <hr>
+            <img src="/media/{{states.imag2}}" alt="">
+            <p>{{states.dance_name}}</p>
+        </div>
+        <div class="col-md-6 left">
+            <h1>Favorite Food</h1>
+            <hr>
+            <img src="/media/{{states.imag3}}" alt="">
+            <p>{{states.food_name}}</p>
+
+        </div>
+    </div>
+</div>
+</header>
+
+
+<section class="hotel_booking">
+    <div class="container">
+    <h1 id="hotel_booking_h1">Hotel Booking</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <h3>Affordable Hotel</h3>
+            <div class="img">
+                <img src="../../../static/img/imgs/hotel/cheap.webp" alt="">
+                <p>Price - Rs. 700</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <h3>3 star Hotel</h3>
+            <div class="img">
+                <img src="../../../static/img/imgs/hotel/3 star.webp" alt="">
+                <p>Price - Rs. 1200</p>
+
+            </div>
+        </div>
+        <div class="col-md-4">
+            <h3>5 star Hotel</h3>
+            <div class="img">
+                <img src="../../../static/img/imgs/hotel/5 star.webp" alt="">
+                <p>Price - Rs. 1800</p>
+                
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+{% endblock center-content %}
+
+{% block footer %}
+{% endblock footer %}

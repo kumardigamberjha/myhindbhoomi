@@ -1,0 +1,129 @@
+{% extends 'website/basic.html' %}
+
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{%static 'css/rail.css' %}" />
+
+{% endblock style %}
+
+{% block center-content %}
+
+<section>
+<h1 class="rail_head">Find Trains</h1>
+  <div class="container">
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="find-train row">
+            <div class="col-md-4">
+            <input type="text" id="tags" name="source_station" placeholder="Enter Source Station">
+            </div>
+
+            <div class="col-md-4">
+
+            <h3>To</h3>
+            </div>
+
+            <div class="col-md-4">
+
+            <input type="text" id="dst" name="destination_station" placeholder="Enter Destination Station">
+            </div>
+            <div class="date">
+                <input type="date" name="train_dates" id="train_date">
+            </div>
+            
+            <input type="submit" value="Submit" class="rail-book-btn">
+        </div>
+    </form>
+  </div>
+ 
+
+</section>
+
+{% endblock center-content %}
+
+{% block extra %}
+<section class="result">
+  
+  <h1>Train Info</h1>
+  <table border = "1" width="100%" height="200px" cellpadding = "5" cellspacing = "5">
+    <tr>
+      <th>Train Number</th>
+      <th>Train Name</th>
+      <th>Source Station Name</th>
+      <th>Destination_Station_Name</th>
+      <th>Days</th>
+      <th>Sleeper Price</th>
+      <th>Ac1 Price</th>
+      <th>Ac2 Price</th>
+      <th>Ac3 Price</th>
+      <th>General Price</th>
+    </tr>
+    {% for i in train %}
+
+      {% if src_query == i.Source_Station_Name and dst_query == i.Destination_Station_Name %}  
+      <tr>
+        <form action="{%url 'booking' i.id %}" method="post">
+
+          {%csrf_token%}
+          <td><input type="submit" style="color: rgb(0, 0, 255); border: none; font-size: 1.5rem;" value="{{i.Train_No}}"></td>
+        </form>
+        <td>{{i.Source_Station_Name}}</td>
+        <td>{{i.Train_Name}}</td>
+        <td>{{i.Destination_Station_Name}}</td>
+        <td>{{i.days}}</td>
+
+        <td>{{i.sleeper}}</td>
+        <td>{{i.AC1}}</td>
+        <td>{{i.AC2}}</td>
+        <td>{{i.AC3}}</td>
+        <td>{{i.general}}</td>
+<td>
+
+</td>
+      </tr>
+  </table>
+  {% endif %}
+{%endfor%}
+</section>
+{% endblock extra %}
+
+{% block footer %}
+
+{% endblock footer %}
+
+
+{% block script_ac %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+
+<!-- jquery ui -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+
+<script>
+    $( function() {
+      var availableTags = [...new Set([
+          {% for i in train %}
+              "{{i.Source_Station_Name}}",
+          {% endfor %}
+        // "Python","JavaScript", "Jquery","DataScience"
+      ])];
+      $( "#tags" ).autocomplete({
+        source: availableTags
+      });
+    } );
+
+    $( function() {
+      var availableTags = [...new Set([
+          {% for i in train %}
+              "{{i.Destination_Station_Name}}",
+          {% endfor %}
+        // "Python","JavaScript", "Jquery","DataScience"
+      ])];
+      $( "#dst" ).autocomplete({
+        source: availableTags
+      });
+    } );
+    </script>
+  </body>
+{% endblock script_ac %}

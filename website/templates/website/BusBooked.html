@@ -1,0 +1,35 @@
+{% extends 'website/basic.html' %}
+
+
+{% load static %}
+
+
+{% block style %}
+<link rel="stylesheet" href="{%static 'css/Booked.css' %}" />
+
+{% endblock style %}
+
+{% block center-content %}
+<div class="container">
+    <h1>Your Bus Booking</h1>
+
+{% if user %}
+<div class="row">
+{% for i in books %}
+<div class="col-md-4">
+
+<form action="{%url 'renderbookedticket' i.id %}" method="post">
+
+    {%csrf_token%}
+    <input type="submit" value="{{i.contact_name}}"> <br>
+</div>
+    {%endfor%}
+</form>
+</div>
+{% endif %}
+</div>
+
+{% endblock center-content %}
+
+{% block footer %}
+{% endblock footer %}

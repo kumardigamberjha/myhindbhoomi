@@ -1,0 +1,94 @@
+{% extends 'website/basic.html' %}
+
+
+{% load static %}
+
+
+{% block style %}
+<link rel="stylesheet" href="{%static 'css/Booking.css' %}" />
+
+{% endblock style %}
+
+{% block center-content %}
+<h1>Your Booked Ticket </h1>
+<div class="row">
+    <div class="col-md-6">
+      <p>Train Number</p>
+    </div>
+    <div class="col-md-6">
+        <p>{{books.Train_No}}</p>
+
+    </div>
+
+    <div class="col-md-6">
+      <p>Train Name</p>
+    </div>
+    <div class="col-md-6">
+        <p>{{books.Train_Name}}</p>
+    </div>
+
+    <div class="col-md-6">
+      <p>Source Station</p>
+    </div>
+    <div class="col-md-6">
+        <p>{{books.Source_Station_Name}}</p>
+    </div>
+
+    <div class="col-md-6">
+      <p>Destination Name</p>
+    </div>
+    <div class="col-md-6">
+        <p>{{books.Destination_Station_Name}}</p>
+    </div>
+
+    <div class="col-md-6">
+      <p>Date of Journey</p>
+    </div>
+    <div class="col-md-6">
+      <p>{{books.date}}</p>
+    </div>
+
+
+    <div class="col-md-6">
+      <p>Name of Traveler</p>
+    </div>
+    <div class="col-md-6">
+        <p>{{books.contact_name}}</p>
+    </div>
+
+    <div class="col-md-6">
+      <p>Age of Traveler</p>
+    </div>
+    <div class="col-md-6">
+        <p>{{books.age}}</p>
+    </div>
+
+    <div class="col-md-6">
+      <p>Contact of Traveler</p>
+    </div>
+    <div class="col-md-6">
+        <p>{{books.contact_number}}</p>
+    </div>
+
+    <div class="col-md-6">
+        <p>Gender of Traveler</p>
+      </div>
+      <div class="col-md-6">
+          <p>{{books.contact_gender}}</p>
+      </div>
+
+      <div class="col-md-6">
+        <p>Contact of Traveler</p>
+      </div>
+      <div class="col-md-6">
+          <p>{{books.price}}</p>
+      </div>
+      
+      <div class="col-md-6">
+        <p>Date of Journey</p>
+      </div>
+      <div class="col-md-6">
+          <p>{{books.date}}</p>
+      </div>
+
+{% endblock center-content %}

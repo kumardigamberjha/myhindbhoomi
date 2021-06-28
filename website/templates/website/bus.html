@@ -1,0 +1,114 @@
+{% extends 'website/basic.html' %}
+
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{%static 'css/bus.css' %}" />
+
+{% endblock style %}
+
+{% block center-content %}
+<h1>Find Bus</h1>
+
+<div class="container">
+  <form action="" method="post">
+    {% csrf_token %}
+    <div class="box">
+        <div class="from">
+            <input type="text" placeholder="From city" id="tags" name="source_station">
+            
+        </div>
+        <div class="to">
+            <input type="text" placeholder="To Destination" id="dst" name="destination_station">
+        </div>
+        <div class="date">
+            <input type="date" name="date" id="">
+        </div>
+        <div class="submits">
+            <input type="submit" value="Submit">
+        </div>
+    </div>
+  </form>
+
+</div>
+
+{% endblock center-content %}
+
+{% block extra %}
+<section class="result">
+  
+  <h1>Train Info</h1>
+  <table border = "1" width="100%" height="200px" cellpadding = "5" cellspacing = "5">
+    <tr>
+      <th>Bus Number</th>
+      <th>Bus Name</th>
+      <th>Source Station Name</th>
+      <th>Destination_Station_Name</th>
+      <th>Days</th>
+      <th>General Price</th>
+      <th>AC Price</th>
+    </tr>
+    {% for i in bus %}
+
+      {% if src_query == i.Source_Station_Name and dst_query == i.Destination_Station_Name %}  
+      <tr>
+        <form action="{%url 'bus_booking' i.id %}" method="post">
+
+          {%csrf_token%}
+          <td><input type="submit" style="color: rgb(0, 0, 255); border: none; font-size: 1.5rem;" value="{{i.Bus_No}}"></td>
+        </form><td>
+        <td>{{i.Bus_name}}</td>
+        <td>{{i.Source_Station_Name}}</td>
+        <td>{{i.Destination_Station_Name}}</td>
+        <td>{{i.days}}</td>
+        <form action="" method="post">
+        <td><a href="">{{i.sleeper}}</a></td>
+        </form>
+        <td><a href="">{{i.AC}}</a></td>
+      </tr>
+  </table>
+  {% endif %}
+{%endfor%}
+</section>
+
+{% endblock extra %}
+
+
+{% block script_ac %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+
+<!-- jquery ui -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+
+<script>
+    $( function() {
+      var availableTags = [...new Set([
+          {% for i in bus %}
+              "{{i.Source_Station_Name}}",
+          {% endfor %}
+        // "Python","JavaScript", "Jquery","DataScience"
+      ])];
+      $( "#tags" ).autocomplete({
+        source: availableTags
+      });
+    } );
+
+    $( function() {
+      var availableTags = [...new Set([
+          {% for i in bus %}
+              "{{i.Destination_Station_Name}}",
+          {% endfor %}
+        // "Python","JavaScript", "Jquery","DataScience"
+      ])];
+      $( "#dst" ).autocomplete({
+        source: availableTags
+      });
+    } );
+    </script>
+  </body>
+{% endblock script_ac %}
+
+
+{% block footer %}
+{% endblock footer %}

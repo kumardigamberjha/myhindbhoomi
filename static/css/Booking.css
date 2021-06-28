@@ -1,0 +1,75 @@
+.header{
+    background: white;
+}
+.container{
+    margin-top: 15px;
+}
+h1{
+    color: orangered;
+    text-align: center;
+    padding: 15px;
+    border-top: 1px solid blue;
+    border-bottom: 1px solid orange;
+    border-radius: 33px;
+}
+
+form{
+    margin-top: 25px;
+}
+form .col-md-6{
+    text-align: center;
+}
+form .col-md-6 .no_outline{
+    border: none;
+    outline-style: none;
+}
+form .col-md-6 .outline{
+    width: 50%;
+    border: none;
+    border-bottom: 1px solid orangered;
+    outline-style: none;
+}
+form .col-md-6 .outline:hover{
+    transition: 0.6s ease;
+    border-bottom: 1px solid blue;
+    color: blue;
+}
+form .genders h4{
+    text-align: center;
+    color: Blue;
+}
+form .genders label{
+    width: 60%;
+    margin: 15px auto;
+    padding: 8px;
+    text-align: center;
+}
+form .genders label span{
+    margin: 25px;
+}
+
+form #seat{
+    width: 60%;
+    margin: 25px auto;
+    text-align: center;
+    color: blue;
+}
+form .seat{
+    width: 60%;
+    margin: 0 auto;    
+    text-align: center;
+}
+form .seat label{
+    padding: 9px;
+}
+
+form .btn{
+    width: 100%;
+    border: 1px ridge green;
+    background-image: linear-gradient(to right, green,white, orange);
+    margin-bottom: 15px;
+    border-radius: 33px;
+    font-size: 1.2rem;
+    color: blue;
+    margin-top: 15px;
+}

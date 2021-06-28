@@ -1,0 +1,46 @@
+{% extends 'website/basic.html' %}
+
+{% load static %}
+
+
+{% block style %}
+<link rel="stylesheet" href="{%static 'css/guide.css' %}" />
+
+{% endblock style %}
+
+{% block center-content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 content">
+            <div class="headings">
+                <h1>HindBhoomi Tours</h1>
+                <p>Your Touring Guide across India</p>
+            </div>
+        </div>
+        <div class="col-md-8 img">
+            <img src="../../../static/img/indian-culture-map.png" alt="">
+        </div>
+    </div>
+</div>
+    
+{% endblock center-content %}
+
+ 
+{% block extra %}
+
+
+<div class="container">
+    <h1 id="my_head">Where are you plan your tour</h1>
+    <div class="row">
+        {% for i in states %}
+        <div class="col-md-4 my-states">
+            <form action="{%url 'state-wise-tourism' i.id %}" method="post">
+                {% csrf_token %}
+                <input type="submit" value="{{i.name}}">  
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock extra %}

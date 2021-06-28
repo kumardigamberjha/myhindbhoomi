@@ -1,0 +1,44 @@
+body{
+    background-color: orange;
+}
+.header{
+    background: rgba(255, 166, 0, 0.425);
+}
+body{
+    background-color: orange;
+}
+.container{
+    /* margin: 40px; */
+}
+.container .row .img img{
+    width: 100%;
+    height: 500px;
+    /* border-radius: 40%; */
+}
+.container .row .content{
+    height: 100vh;
+}
+.container .row .content .headings{
+    margin-top: 40%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#my_head{
+    text-align: center;
+    font-family:cursive;
+    font-weight: 800;
+    padding: 35px;
+    border-top: 1px solid red;
+    border-bottom: 1px solid green;
+}
+
+.container .row .my-states form input{
+    padding: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 5px;
+    background-color: transparent;
+    border: none;
+    text-align: center;
+}
+.container .row .my-states form input:hover{
+    color: orangered;
+}

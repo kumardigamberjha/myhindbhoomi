@@ -1,0 +1,115 @@
+{% extends 'website/basic.html' %}
+
+
+{% load static %}
+
+
+{% block style %}
+<link rel="stylesheet" href="{%static 'css/Booking.css' %}" />
+
+{% endblock style %}
+
+{% block center-content %}
+
+<div class="container">
+  <h1>Flight Booking Console</h1>
+  <form action="" method="POST">
+    {% csrf_token %}
+    <div class="row">
+      <div class="col-md-6">
+        <p>Flight Number</p>
+      </div>
+      <div class="col-md-6">
+        <input name='Flight_No' class="no_outline" value='{{flight.Flight_No}}'>
+
+      </div>
+
+      <div class="col-md-6">
+        <p>Flight Name</p>
+      </div>
+      <div class="col-md-6">
+        <input name='Flight_Name' class="no_outline" value='{{flight.Flight_name}}'>
+      </div>
+
+      <div class="col-md-6">
+        <p>Source Station</p>
+      </div>
+      <div class="col-md-6">
+        <input name='Source_Station_Name' class="no_outline" value='{{flight.Source_Station_Name}}'>
+      </div>
+
+      <div class="col-md-6">
+        <p>Destination Name</p>
+      </div>
+      <div class="col-md-6">
+        <input name='Destination_Station_Name' class="no_outline" value='{{flight.Destination_Station_Name}}' >
+      </div>
+
+      <div class="col-md-6">
+        <p>Date of Journey</p>
+      </div>
+      <div class="col-md-6">
+        <input name='date' class="no_outline" value='{{date}}' >
+      </div>
+
+
+      <div class="col-md-6">
+        <p>Name of Traveler</p>
+      </div>
+      <div class="col-md-6">
+        <input type="text" class="outline" placeholder="{{user}}" name='contact_name' required>
+      </div>
+
+      <div class="col-md-6">
+        <p>Age of Traveler</p>
+      </div>
+      <div class="col-md-6">
+        <input required type="number" class="outline" name='age'>
+      </div>
+
+      <div class="col-md-6">
+        <p>Contact of Traveler</p>
+      </div>
+      <div class="col-md-6">
+        <input type="tel" required class="outline" name='contact_number'>
+      </div>
+
+
+      <div class="genders">
+        <h4>Select your Gender</h4>
+        <label for="male">
+          <span>Male</span><input type="radio" name='contact_gender' value="male">
+        </label>
+
+        <label for="female">
+          <span>Female</span><input type="radio" name='contact_gender' value="female">
+        </label>
+
+        <label for="other">
+          <span>Other</span><input type="radio" name='contact_gender' value="other">
+      </div>
+      </label><br>
+
+      <div class="seat">
+        <h4 id="seat">Select Seat</h4>
+        <br>
+        <label for="general">
+          General Price = Rs. {{flight.Economy}} <input type="radio" id="general" name='price'
+            value="{{flight.Economy}}">
+        </label><br>
+
+        <label for="Ac1">
+          AC Price = Rs. {{flight.Bussiness}} <input type="radio" id="Ac1" value="{{flight.Bussiness}}" name='price'>
+        </label><br>
+
+      </div>
+    </div>
+
+    <input type="submit" class="btn" value="submit">
+  </form>
+</div>
+
+{% endblock center-content %}
+
+{% block footer %}
+{% endblock footer %}
