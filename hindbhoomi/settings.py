@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '8ilt12upnd!4*%ie_rd-py_@cw##!4l5%4^@w$z(u5&=)5h&5_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["https://myhindbhoomi.herokuapp.com",
 "localhost",
