@@ -27,7 +27,9 @@ SECRET_KEY = '8ilt12upnd!4*%ie_rd-py_@cw##!4l5%4^@w$z(u5&=)5h&5_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["https://myhindbhoomi.herokuapp.com",
+"localhost",
+"127.0.0.1"]
 
 
 # Application definition
