@@ -27,7 +27,7 @@ SECRET_KEY = '8ilt12upnd!4*%ie_rd-py_@cw##!4l5%4^@w$z(u5&=)5h&5_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["https://myhindbhoomi.herokuapp.com",
+ALLOWED_HOSTS = [
 "localhost",
 "127.0.0.1"]
 
@@ -133,5 +133,3 @@ STATICFILES_DIRS = [
 import os
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = "/media/"
-
-django_heroku.settings(locals())
